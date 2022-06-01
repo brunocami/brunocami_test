@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Problema_1 from "../problemas/Problema1/index";
 function App() {
-  
 
   // PROBLEMA 1 - MULTIPLICAR SIN *
   const [producto, setProducto] = useState("")
@@ -23,11 +22,6 @@ function App() {
       setProducto("Por favor, ingrese numeros unicamente ")
     }
   }
-
-  const clearScreen = () => {
-    setX('')
-  }
-
   // PROBLEMA 1
 
   return (
