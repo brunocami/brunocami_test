@@ -9,9 +9,9 @@ const Problema_1 = ({ setearX, setearY, multiplicar, producto }) => {
       <h4>Multiplicar dos variables sin usar el operador *</h4>
       <p>Solucion: "x / (1 / y)"</p>
       <div className="set_container">
-        <input type="text" className="set"  onChange={setearX}/>
-        <input type="text" className="set"  onChange={setearY}/>
-        <button className="multiplicar" onClick={multiplicar}>Multiplicar</button>
+        <input type="text" className="input"  onChange={setearX}/>
+        <input type="text" className="input"  onChange={setearY}/>
+        <button className="btn" onClick={multiplicar}>Multiplicar</button>
       </div>
       <div className="resultado">
         Resultado: {producto}

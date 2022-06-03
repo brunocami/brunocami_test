@@ -1,36 +1,33 @@
-import React, { useState } from "react";
-import Problema_1 from "../problemas/Problema1/index";
+import React, { useEffect, useState } from "react";
+import Problema_1 from "../problemas/Problema1";
+import Problema_2 from "../problemas/Problema2";
+import Problema_3 from "../problemas/Problema3";
+import Problema1Utils from "../utils/problema1";
+import Problema2Utils from "../utils/problema2";
+
 function App() {
 
-  // PROBLEMA 1 - MULTIPLICAR SIN *
-  const [producto, setProducto] = useState("")
-  const [x, setX] = useState('x')
-  const [y, setY] = useState('y')
-  const setearX = (e) => {
-    setX(e.target.value)
-  }
-  const setearY = (e) => {
-    setY(e.target.value)
-  }
-
-  const result = x / ( 1 / y );
-
-  const multiplicar = () => {
-    if(result) {
-      setProducto(result)
-    } else {
-      setProducto("Por favor, ingrese numeros unicamente ")
-    }
-  }
-  // PROBLEMA 1
+  const {producto, x, y, result, setearX, setearY, multiplicar} = Problema1Utils();
+  const {pokemonsCount, typesArray, type, handleChange, submitForm, pokemonsPerType, pokemon} = Problema2Utils()
 
   return (
-    <Problema_1 
-      setearX={setearX}
-      setearY={setearY}
-      producto={producto}
-      multiplicar={multiplicar}
-    />
+    <>
+      <Problema_1
+        setearX={setearX}
+        setearY={setearY}
+        producto={producto}
+        multiplicar={multiplicar}
+      />
+      <Problema_2
+        types={typesArray}
+        handleChange={handleChange}
+        submitForm={submitForm}
+        type={type}
+        pokemonsCount={pokemonsCount}
+        pokemonsPerType={pokemonsPerType}
+      />
+      <Problema_3/>
+    </>
   );
 }
 
